@@ -31,7 +31,7 @@ public class S3Client {
             s3Client.putObject(putObjectRequest)
             String linkName = createLinkObject(link, key, bucketName)
             if (linkName == null) {
-                linkName = s3Client.generatePresignedUrl(bucketName, key, new LocalDateTime().plusDays(30).toDate())
+                linkName = s3Client.generatePresignedUrl(bucketName, key, new LocalDateTime().plusDays(1).toDate())
             }
             return linkName
         } catch (Exception e) {
